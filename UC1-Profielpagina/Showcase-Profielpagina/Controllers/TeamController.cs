@@ -8,5 +8,11 @@ namespace Showcase_Profielpagina.Controllers
         {
             return View();
         }
+        /*
+        public TeamController()
+        {
+            Topteam();
+        }
+        */
     }
 }

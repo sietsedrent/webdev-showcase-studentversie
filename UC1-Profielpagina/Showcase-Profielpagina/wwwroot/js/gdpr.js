@@ -5,23 +5,36 @@ class GDPR {
         this.showContent();
         this.bindEvents();
 
-        if(this.cookieStatus() !== 'accept') this.showGDPR();
+        if (this.cookieStatus() !== 'accept') this.showGDPR();
     }
 
     bindEvents() {
         let buttonAccept = document.querySelector('.gdpr-consent__button--accept');
         buttonAccept.addEventListener('click', () => {
-            this.cookieStatus('accept');
+            this.cookieStatus('accept')
             this.showStatus();
             this.showContent();
             this.hideGDPR();
+            let JSONDatumenTijd = { Tijd: '16:00' };
+            let tussen = JSON.stringify(JSONDatumenTijd);
+            localStorage.setItem('gegevens', tussen);       
         });
 
+        //student uitwerking (klaar?)
+        let buttonReject = document.querySelector('.gdpr-consent__button--reject');
+        buttonReject.addEventListener('click', () => {
+            this.cookieStatus('reject')
+            this.showStatus();
+            this.showContent();
+            this.hideGDPR();
+            let JSONDatumenTijd = { Tijd: '16:00' };
+            let tussen = JSON.stringify(JSONDatumenTijd);
+            localStorage.setItem('gegevens', tussen);
+        });
+        
+    }   
 
-//student uitwerking
 
-
-    }
 
     showContent() {
         this.resetContent();
