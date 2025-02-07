@@ -52,7 +52,7 @@ class GDPR {
         const classes = [
             '.content-gdpr-accept',
 
-//student uitwerking
+            //student uitwerking
 
             '.content-gdpr-not-chosen'];
 
@@ -70,9 +70,9 @@ class GDPR {
     cookieStatus(status) {
 
         if (status) localStorage.setItem('gdpr-consent-choice', status);
-
-//student uitwerking
-
+        //student uitwerking
+        //if (!status) localStorage.setItem('gpdr-consent-choice', status);
+        //
         return localStorage.getItem('gdpr-consent-choice');
     }
 
