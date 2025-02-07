@@ -9,16 +9,21 @@ class GDPR {
     }
 
     bindEvents() {
+        const d = new Date();
+        let time = d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+        let date = d.getDate().toString().padStart(2, '0') + '-' + (d.getMonth() + 1).toString().padStart(2, '0') + '-' + d.getFullYear();
+
         let buttonAccept = document.querySelector('.gdpr-consent__button--accept');
+
         buttonAccept.addEventListener('click', () => {
-            this.cookieStatus('accept')
+            this.cookieStatus('accept');
             this.showStatus();
             this.showContent();
             this.hideGDPR();
-            let JSONDatumenTijd = { Tijd: '16:00' };
-            let tussen = JSON.stringify(JSONDatumenTijd);
-            localStorage.setItem('gegevens', tussen);       
+            let DateAndTime = { Datum: date, Tijd: time };
+            localStorage.setItem('gegevens', JSON.stringify(DateAndTime));
         });
+
 
         //student uitwerking (klaar?)
         let buttonReject = document.querySelector('.gdpr-consent__button--reject');
@@ -27,9 +32,8 @@ class GDPR {
             this.showStatus();
             this.showContent();
             this.hideGDPR();
-            let JSONDatumenTijd = { Tijd: '16:00' };
-            let tussen = JSON.stringify(JSONDatumenTijd);
-            localStorage.setItem('gegevens', tussen);
+            let DateAndTime = { Datum: date, Tijd: time };
+            localStorage.setItem('gegevens', JSON.stringify(DateAndTime));
         });
         
     }   
