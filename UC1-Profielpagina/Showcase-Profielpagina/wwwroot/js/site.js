@@ -29,7 +29,6 @@ class Site {
         this.showSlides(this.slideIndex += n);
     }
 
-
 }
 
 const site = new Site();
