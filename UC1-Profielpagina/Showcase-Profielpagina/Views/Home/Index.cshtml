@@ -2,166 +2,135 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="page" style="background-color: #e1f5f4" >
-    <section class="personalia" >
-        <!-- Foto-->
-        <img class="person-logo" src="images/pee.png" style="width: 100%; height: auto;">
+<main class="page" style="background-color: #e1f5f4">
+    <!-- Linkerkant -->
+    <section class="personalia">
+        <!-- Foto -->
+        <img class="person-logo" src="images/pee.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
         <h1 class="person-name">Sietse Drent</h1>
-        <div class="profile-content__category--hidden-mobile">
-            <h3 class="profile-content__category-title">Introductie</h3>
+
+        <!-- Introductie -->
+        <section class="profile-content__category--hidden-mobile">
+            <h2 class="profile-content__category-title">Introductie</h2>
             <hr>
-        </div>
-        <!-- Introductie-->
-        <div class="profile-content__element--hidden-mobile">
-            <div class="profile-content__element-header">
-            </div>
+        </section>
+        <section class="profile-content__element--hidden-mobile">
+            <div class="profile-content__element-header"></div>
             <p class="profile-content__description">
-                Ik ben een gedreven en resultaatgerichte professional met [aantal] jaar ervaring in [jouw vakgebied/sector]. Gedurende mijn carrière heb ik uitgebreide ervaring opgedaan in [specifieke vaardigheden of verantwoordelijkheden] en heb ik bewezen succesvol te zijn in het behalen van [concrete resultaten]. Mijn passie voor [specifiek aspect van je vakgebied] en mijn vermogen om snel nieuwe concepten te begrijpen, stellen me in staat om effectief samen te werken en bij te dragen aan het succes van het team en de organisatie. Ik ben op zoek naar een uitdagende functie waar ik mijn vaardigheden verder kan ontwikkelen en mijn ervaring kan inzetten om waarde te creëren.
-            <p>
-        </div>
-        <!-- Contact-->
-        <div class="profile-content__category--hidden-mobile" align="left">
-            <h3 class="profile-content__category-title">Contact </h3>
+                Ik ben een gedreven en resultaatgerichte professional met [aantal] jaar ervaring in [jouw vakgebied/sector].
+                Gedurende mijn carrière heb ik uitgebreide ervaring opgedaan in [specifieke vaardigheden of verantwoordelijkheden]
+                en heb ik bewezen succesvol te zijn in het behalen van [concrete resultaten]. Mijn passie voor [specifiek aspect van je vakgebied]
+                en mijn vermogen om snel nieuwe concepten te begrijpen, stellen me in staat om effectief samen te werken en bij te dragen aan het succes
+                van het team en de organisatie. Ik ben op zoek naar een uitdagende functie waar ik mijn vaardigheden verder kan ontwikkelen en mijn ervaring
+                kan inzetten om waarde te creëren.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section class="profile-content__category--hidden-mobile" align="left">
+            <h2 class="profile-content__category-title">Contact</h2>
             <hr>
-        </div>
-        <div class="profile-content__element--hidden-mobile" align="left">
-            <div class="profile-content__element-header">
-            </div>
-            <p class="profile-content__description">
+        </section>
+        <address class="profile-content__element--hidden-mobile" align="left">
+            <div class="profile-content__element-header"></div>
             <p class="profile-content__institute">'t Harde, the Netherlands</p>
-            <p class="profile-content__institute">sietsedrent@gmail.com</p>
-            <p class="profile-content__institute">+31645777013</p>
-            <p class="profile-content__institute">https://www.linkedin.com/in/sietse-drent-10a7b814b/</p>
-            <p>
-        </div>
+            <p class="profile-content__institute"><a href="mailto:sietsedrent@gmail.com">sietsedrent@gmail.com</a></p>
+            <p class="profile-content__institute"><a href="tel:+31645777013">+31 6 45777013</a></p>
+            <p class="profile-content__institute"><a href="https://www.linkedin.com/in/sietse-drent-10a7b814b/" target="_blank">LinkedIn Profiel</a></p>
+        </address>
     </section>
 
-
-
+    <!-- Rechterkant -->
     <section class="profile">
         <section class="profile-content">
             <!-- Opleidingen -->
-            <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Opleidingen</h3>
+            <section class="profile-content__category">
+                <h2 class="profile-content__category-title">Opleidingen</h2>
                 <hr>
-            </div>
-            <!-- Opleiding 1 -->
-            <div class="profile-content__element">
+            </section>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">ICT</h4>
-                    <p class="profile-content__period">july 2023 - June 2027</p>
+                    <h3 class="profile-content__title">ICT</h3>
+                    <p class="profile-content__period">Juli 2023 - Juni 2027</p>
                 </div>
                 <p class="profile-content__institute">Hogeschool Windesheim, Zwolle</p>
-            </div>
-            <!-- Opleiding 2 -->
-            <div class="profile-content__element">
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Havo</h4>
-                    <p class="profile-content__period">july 2023 - June 2027</p>
+                    <h3 class="profile-content__title">Havo</h3>
+                    <p class="profile-content__period">Juli 2018 - Juni 2023</p>
                 </div>
                 <p class="profile-content__institute">Lambert Franckens College, Elburg</p>
-            </div>
+            </article>
 
-            <!--Werkervaring -->
-            <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Werkervaring</h3>
+            <!-- Werkervaring -->
+            <section class="profile-content__category">
+                <h2 class="profile-content__category-title">Werkervaring</h2>
                 <hr>
-            </div>
-            <!--Werkervarig 1 -->
-            <div class="profile-content__element">
+            </section>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Orderpicker</h4>
+                    <h3 class="profile-content__title">Orderpicker</h3>
                     <p class="profile-content__period">Jan 2025 - Feb 2025</p>
                 </div>
                 <p class="profile-content__institute">Uitgekookt, Kampen</p>
-            </div>
-            <!--Werkervarig 2 -->
-            <div class="profile-content__element">
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Customer Service Representative</h4>
+                    <h3 class="profile-content__title">Customer Service Representative</h3>
                     <p class="profile-content__period">Juni 2024 - Jan 2025</p>
                 </div>
                 <p class="profile-content__institute">VitalAire, Zwolle</p>
-            </div>
-            <!--Werkervarig 3 -->
-            <div class="profile-content__element">
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Sales Representative</h4>
+                    <h3 class="profile-content__title">Sales Representative</h3>
                     <p class="profile-content__period">April 2021 - Dec 2023</p>
                 </div>
                 <p class="profile-content__institute">Yource, Zwolle</p>
-            </div>
-            <!--Werkervarig 4 -->
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Waiter Private Events</h4>
-                    <p class="profile-content__period">June 2018 - Nov 2018</p>
-                </div>
-                <p class="profile-content__institute">Mise en Place, Zwolle</p>
-            </div>
-            <!--Werkervaring 5 -->
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Sales Representative</h4>
-                    <p class="profile-content__period">April 2018 - Juni 2018</p>
-                </div>
-                <p class="profile-content__institute">Trust Marketing, Zwolle</p>
-            </div>
-            <!--Werkervaring 6 -->
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Sales Representative</h4>
-                    <p class="profile-content__period">Dec 2017 - Maart 2018</p>
-                </div>
-                <p class="profile-content__institute">Streetwise Sales & Marketing, Zwolle</p>
-            </div>
+            </article>
 
-            <!--Certificaten-->
-            <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Certificaten</h3>
+            <!-- Certificaten -->
+            <section class="profile-content__category">
+                <h2 class="profile-content__category-title">Certificaten</h2>
                 <hr>
-            </div>
-            <!--Certificaat 1-->
-            <div class="profile-content__element">
+            </section>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Cambridge</h4>
+                    <h3 class="profile-content__title">Cambridge</h3>
                 </div>
                 <p class="profile-content__institute">Niveau B2</p>
-            </div>
-            <!--Certificaat 2-->
-            <div class="profile-content__element">
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Delf</h4>
+                    <h3 class="profile-content__title">Delf</h3>
                 </div>
                 <p class="profile-content__institute">Niveau A1</p>
-            </div>
+            </article>
 
-            <!--Skills-->
-            <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Skills</h3>
+            <!-- Skills -->
+            <section class="profile-content__category">
+                <h2 class="profile-content__category-title">Skills</h2>
                 <hr>
-            </div>
-            <!--Skill 1-->
-            <div class="profile-content__element">
+            </section>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Programmeertalen zoals; PHP/Java/C#</h4>
+                    <h3 class="profile-content__title">Programmeertalen</h3>
                 </div>
-                <p class="profile-content__institute">1 year</p>
-            </div>
-            <!--Skill 2-->
-            <div class="profile-content__element">
+                <p class="profile-content__institute">PHP, Java, C# (1 jaar ervaring)</p>
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Querytalen zoals; SQL</h4>
+                    <h3 class="profile-content__title">Querytalen</h3>
                 </div>
-                <p class="profile-content__institute">1 year</p>
-            </div>
-            <!--Skill 3-->
-            <div class="profile-content__element">
+                <p class="profile-content__institute">SQL (1 jaar ervaring)</p>
+            </article>
+            <article class="profile-content__element">
                 <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Opmaaktalen zoals; CSS/HTML</h4>
+                    <h3 class="profile-content__title">Opmaaktalen</h3>
                 </div>
-                <p class="profile-content__institute">1 year</p>
-            </div>
+                <p class="profile-content__institute">CSS, HTML (1 jaar ervaring)</p>
+            </article>
         </section>
     </section>
-</div>
+</main>
