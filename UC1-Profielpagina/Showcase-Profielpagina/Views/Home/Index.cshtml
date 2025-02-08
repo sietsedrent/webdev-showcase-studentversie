@@ -3,33 +3,22 @@
 }
 
 <main class="page" style="background-color: #e1f5f4">
-
-
-
+    <!-- Cookies-->
     <div class="gdpr-container">
-
         <h1 id="content-gpdr-consent-status"  ></h1>
-
         <div class="content-gdpr-not-chosen hide">
-            <p>Deze content wordt alleen getoond als gdrp consent niet is gekozen.</p>
+            <p>Om de inhoud te kunnen tonen zal er akkoord moeten worden gegaan met de voorwaarden. </p>
         </div>
-
         <div class="content-gdpr-accept hide">
             <script>
                 document.getElementById("content-gpdr-consent-status").style.display = "none";
             </script>
-
         </div>
-
         <div class="content-gdpr-reject hide">
-            <p>Deze content wordt alleen getoond als gdrp is verworpen.</p>
-
-            
-
+            <p>Door het afwijzen van de cookies kan de inhoud helaas niet getoond worden </p>
         </div>
 
         <section class="gdpr-consent hide">
-
             <div class="gdpr-consent__description">
                 <p>
                     Deze website gebruikt cookies.
@@ -37,23 +26,41 @@
                     van verkeer op de website, advertenties.
                 </p>
             </div>
-
             <div class="gdpr-consent__choice">
                 <button class="gdpr-consent__button--accept">Ja, natuurlijk</button>
-                <button class="gdpr-consent__button--reject">Neu, misschien later</button>
+                <button class="gdpr-consent__button--reject">Nee, misschien later</button>
             </div>
-
         </section>
     </div>
 
-
+    
 
 
     <!-- Linkerkant -->
     <section class="personalia">
-        <!-- Foto -->
-        <img class="person-logo" src="images/pee.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
-        <h1 class="person-name">Sietse Drent</h1>
+        <!--SLIDESHOW Foto's-->
+        <div class="slideshow-container">
+            <!-- Foto's -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/pee.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/it-er.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
+                <div class="text">Caption Two</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/pee.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
+                <div class="text">Caption Three</div>
+            </div>
+            <!-- Volgende and terug -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
 
         <!-- Introductie -->
         <section class="profile-content__category--hidden-mobile">

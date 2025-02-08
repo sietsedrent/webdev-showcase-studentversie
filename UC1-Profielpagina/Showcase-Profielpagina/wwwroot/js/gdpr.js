@@ -6,7 +6,13 @@ class GDPR {
         this.bindEvents();
 
         if (this.cookieStatus() !== 'accept') this.showGDPR();
+
+
+        
     }
+    
+
+
 
     bindEvents() {
         const d = new Date();
@@ -89,6 +95,12 @@ class GDPR {
     showGDPR(){
         document.querySelector(`.gdpr-consent`).classList.add('show');
     }
+
+    
+
+
+  
+
 
 }
 
