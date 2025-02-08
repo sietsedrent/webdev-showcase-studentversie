@@ -75,8 +75,6 @@ class GDPR {
 
         if (status) localStorage.setItem('gdpr-consent-choice', status);
         //student uitwerking
-        //if (!status) localStorage.setItem('gpdr-consent-choice', status);
-        //
         return localStorage.getItem('gdpr-consent-choice');
     }
 
