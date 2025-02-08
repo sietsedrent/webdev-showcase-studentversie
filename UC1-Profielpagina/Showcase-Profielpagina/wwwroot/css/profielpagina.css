@@ -9,7 +9,7 @@
 .personalia {
     background-color: #e7e8ec;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
@@ -17,6 +17,7 @@
 .profile {
     background-color: #faf8f8;
     width: 100%;
+    display: none;
 }
 
 .person-logo {
