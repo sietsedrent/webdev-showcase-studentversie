@@ -22,6 +22,10 @@ class GDPR {
             this.hideGDPR();
             let DateAndTime = { Datum: date, Tijd: time };
             localStorage.setItem('gegevens', JSON.stringify(DateAndTime));
+
+            document.querySelector('.personalia').style.display = 'flex';
+            document.querySelector('.profile').style.display = 'flex';
+            document.querySelector('.gdpr-container').style.display = 'none';
         });
 
 
