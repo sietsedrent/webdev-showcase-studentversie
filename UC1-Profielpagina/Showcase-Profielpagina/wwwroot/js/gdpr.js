@@ -5,7 +5,14 @@ class GDPR {
         this.showContent();
         this.bindEvents();
 
-        if (this.cookieStatus() !== 'accept') this.showGDPR();
+        if (this.cookieStatus() !== 'accept') {
+            this.showGDPR();
+        }
+        if (this.cookieStatus() == 'accept') {
+            document.querySelector('.personalia').style.display = 'flex';
+            document.querySelector('.profile').style.display = 'flex';
+            document.querySelector('.gdpr-container').style.display = 'none';
+        }
     }
 
     bindEvents() {
