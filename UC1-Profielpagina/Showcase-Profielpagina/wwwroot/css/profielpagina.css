@@ -73,16 +73,6 @@
 
 
 
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
 @media only screen and (min-width: 800px) {
 
     .page {
