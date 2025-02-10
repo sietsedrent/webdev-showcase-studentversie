@@ -5,7 +5,7 @@
 
 <div class="page">
     <section class="contact">
-
+        <h1>Sietse Drent</h1>
         <h1>Contact</h1>
         <p>@ViewBag.Message</p>
         <form method="post" class="form-contactpagina">
@@ -31,6 +31,17 @@
                 <label for="phone">Telefoonnummer: </label>
                 <input type="tel" asp-for="Phone" name="phone" id="phone" required>
             </div>
+           
+                
+            <div class="form-contactpagina__inputelement fx-col">
+                <label for="lastname">Onderwerp: </label>
+                <input type="text" asp-for="Subject" name="subject" id="subject" required>
+            </div>
+            <div class="form-contactpagina__inputelement fx-col" >
+                <label for="lastname">Beschrijving: </label>
+                <input type="text" asp-for="Description" name="description" id="wompwmp" rows="15" cols="25" placeholder="This is the default text" required>
+            </div>
+
 
             <div class="form-contactpagina__inputelement">
                 <input type="reset" value="Reset">

@@ -19,5 +19,14 @@ namespace Showcase_Contactpagina.Models
         [Required]
         [Phone]
         public string Phone { get; set; }
+
+        [Required]
+        //[Subject]
+        public string Subject { get; set; }
+
+        [Required]
+        //[Description]
+        public string Description { get; set; }
+
     }
 }
