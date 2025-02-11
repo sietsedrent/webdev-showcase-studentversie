@@ -7,6 +7,8 @@ using System.Numerics;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Net;
+using System.Net.Mail;
 
 namespace Showcase_Contactpagina.Controllers
 {
@@ -58,9 +60,16 @@ namespace Showcase_Contactpagina.Controllers
                 return View();
             }
 
+            // Looking to send emails in production? Check out our Email API/SMTP product!
+
+
+
             ViewBag.Message = "Het contactformulier is verstuurd";
             
             return View();
+
+            
+
         }
     }
 }
