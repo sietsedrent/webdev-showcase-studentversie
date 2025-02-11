@@ -35,8 +35,6 @@ class GDPR {
             document.querySelector('.gdpr-container').style.display = 'none';
         });
 
-
-        //student uitwerking (klaar?)
         let buttonReject = document.querySelector('.gdpr-consent__button--reject');
         buttonReject.addEventListener('click', () => {
             this.cookieStatus('reject')
@@ -59,7 +57,6 @@ class GDPR {
     resetContent(){
         const classes = [
             '.content-gdpr-accept',
-            //student uitwerking
             '.content-gdpr-not-chosen'];
 
         for(const c of classes){
@@ -75,11 +72,10 @@ class GDPR {
 
     cookieStatus(status) {
         if (status) localStorage.setItem('gdpr-consent-choice', status);
-        //student uitwerking
         return localStorage.getItem('gdpr-consent-choice');
     }
 
-//student uitwerking
+    
     hideGDPR(){
         document.querySelector(`.gdpr-consent`).classList.add('hide');
         document.querySelector(`.gdpr-consent`).classList.remove('show');
