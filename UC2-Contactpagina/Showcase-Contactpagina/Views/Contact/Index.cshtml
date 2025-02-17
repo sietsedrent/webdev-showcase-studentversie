@@ -8,6 +8,7 @@
         <h1>Sietse Drent</h1>
         <h1>Contact</h1>
         <p>@ViewBag.Message</p>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <form method="post" class="form-contactpagina">
 
             
@@ -41,6 +42,8 @@
                 <label for="lastname">Beschrijving: </label>
                 <input type="text" asp-for="Description" name="description" id="wompwmp" rows="15" cols="25" placeholder="This is the default text" required>
             </div>
+
+            <div class="g-recaptcha" data-sitekey="6LdpItoqAAAAADZZQ9mQv_ZmzrtxR-RAHEOBXqJz"></div>
 
 
             <div class="form-contactpagina__inputelement">
