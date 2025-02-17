@@ -2,20 +2,25 @@
 
 .page {
     display: flex;
-    flex-direction: column;
-    font-family: Arial;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
+
 .contact {
+    background-color: #cbf1ba33;
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .form-contactpagina__inputelement {
     display: flex;
-    flex-direction: row;
+    text-align: center;
     margin: 15px 0px 15px 0px
 }
 
