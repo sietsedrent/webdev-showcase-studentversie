@@ -4,55 +4,55 @@
 }
 
 <div class="page">
-    <h1> Sietse Drent</h1>
-    <section class="contact">
-
+    <section class="contact-section">
+        <section class="contact-intro">
+            <h2 class="contact-title">Get in Touch</h2>
+            <p class="contact-description">Sietse Drent.</p>
+        </section>
 
         <p>@ViewBag.Message</p>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <form method="post" class="form-contactpagina">
-            <h2>Contact</h2>
 
-            <div class="form-contactpagina__inputelement fx-col">
-                <label for="firstname">Voornaam: </label>
-                <input type="text" asp-for="FirstName" name="firstname" id="firstname" required>
+        <form method="post" class="contact-form">
+
+            <div class="form-group-container">
+                <div class="form-group">
+                    <label for="firstname" class="form-label">Voornaam</label>
+                    <input id="firstname" type="text" asp-for="FirstName" class="form-input" placeholder="Your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname" class="form-label">Achternaam</label>
+                    <input id="lastname" type="text" asp-for="LastName" class="form-input" placeholder="Your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mailadres</label>
+                    <input id="email" type="email" asp-for="Email" class="form-input" placeholder="Your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">Telefoonnummer</label>
+                    <input id="phone" type="tel" asp-for="Phone" class="form-input" placeholder="Your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Onderwerp</label>
+                    <input id="subject" type="text" asp-for="Subject" class="form-input" placeholder="Subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Beschrijving</label>
+                    <textarea id="description" asp-for="Description" class="form-textarea" placeholder="Your message" required></textarea>
+                </div>
             </div>
 
-            <div class="form-contactpagina__inputelement fx-col">
-                <label for="lastname">Achternaam: </label>
-                <input type="text" asp-for="LastName" name="lastname" id="lastname" required>
-            </div>
-
-            <div class="form-contactpagina__inputelement fx-col">
-                <label for="email">E-mailadres: </label>
-                <input type="email" asp-for="Email" name="email" id="email" required>
-            </div>
-
-            <div class="form-contactpagina__inputelement fx-col">
-                <label for="phone">Telefoonnummer: </label>
-                <input type="tel" asp-for="Phone" name="phone" id="phone" required>
-            </div>
-           
-                
-            <div class="form-contactpagina__inputelement fx-col">
-                <label for="lastname">Onderwerp: </label>
-                <input type="text" asp-for="Subject" name="subject" id="subject" required>
-            </div>
-            <div class="form-contactpagina__inputelement fx-col" >
-                <label for="lastname">Beschrijving: </label>
-                <input type="text" asp-for="Description" name="description" id="wompwmp" rows="15" cols="25" placeholder="This is the default text" required>
-            </div>
-
-            <div class="g-recaptcha" data-sitekey="6LdpItoqAAAAADZZQ9mQv_ZmzrtxR-RAHEOBXqJz"></div>
-
-
-            <div class="form-contactpagina__inputelement">
-                <input type="reset" value="Reset">
-                <input type="submit" formmethod="post" value="Verstuur!">
-            </div>
-
-
+            <section class="formreset">
+                <div class="g-recaptcha" data-sitekey="6LdpItoqAAAAADZZQ9mQv_ZmzrtxR-RAHEOBXqJz"></div>
+                <button class="form-contactpagina__inputelement" type="reset"> Reset  </button>
+            </section>
+            <button class="form-submit" type="submit">Verstuur</button>
         </form>
-
     </section>
 </div>
+
