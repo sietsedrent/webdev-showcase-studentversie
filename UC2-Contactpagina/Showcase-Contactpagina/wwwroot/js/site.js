@@ -4,8 +4,6 @@
 // Write your JavaScript code.
 class site {
     const inputEmail = document.getElementById('email');
-    const inputSubject = document.getElementById('subject');
-    const inputDescription = document.getElementById('description');
 
     const validateEmail = () => {
         if (inputEmail.validity.typeMismatch) {
@@ -18,24 +16,9 @@ class site {
         }
     }
 
-    const validateSubject = () => {
-        if (inputSubject.value.length > 200) {
-            inputSubject.setCustomValidity("Onderwerp mag niet langer dan 200 tekens zijn!")
-        } else {
-            inputEmail.setCustomValidity("");
-        }
-    }
-
-    const validateDescription = () => {
-        if (inputDescription.value.length > 600) {
-            inputDescription.setCustomValidity("Beschrijving mag niet langer dan 600 tekens zijn!");
-        }
-    }
 
     const validateForm = () => {
         validateEmail();
-        validateSubject();
-        validateDescription();
     }
 
    // Event listener voor email

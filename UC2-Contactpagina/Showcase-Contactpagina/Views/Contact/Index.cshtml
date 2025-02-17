@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label for="email" class="form-label">E-mailadres</label>
-                    <input id="email" type="email" asp-for="Email" class="form-input" placeholder="Your email" required>
+                    <input id="email" type="email" asp-for="Email" class="form-input" placeholder="Your email" maxlength="80" required>
                 </div>
 
                 <div class="form-group">
@@ -38,17 +38,17 @@
 
                 <div class="form-group">
                     <label for="subject" class="form-label">Onderwerp</label>
-                    <input id="subject" type="text" asp-for="Subject" class="form-input" placeholder="Subject" required>
+                    <input id="subject" type="text" asp-for="Subject" class="form-input" placeholder="Subject" maxlength="200" required>
                 </div>
 
                 <div class="form-group">
                     <label for="description" class="form-label">Beschrijving</label>
-                    <textarea id="description" asp-for="Description" class="form-textarea" placeholder="Your message" required></textarea>
+                    <textarea id="description" asp-for="Description" class="form-textarea" placeholder="Your message" maxlength="600" required></textarea>
                 </div>
             </div>
 
             <section class="formreset">
-                <div class="g-recaptcha" data-sitekey="6LdpItoqAAAAADZZQ9mQv_ZmzrtxR-RAHEOBXqJz"></div>
+                <div class="g-recaptcha" data-sitekey="6LdpItoqAAAAADZZQ9mQv_ZmzrtxR-RAHEOBXqJz"> </div>
                 <button class="form-contactpagina__inputelement" type="reset"> Reset  </button>
             </section>
             <button class="form-submit" type="submit">Verstuur</button>
