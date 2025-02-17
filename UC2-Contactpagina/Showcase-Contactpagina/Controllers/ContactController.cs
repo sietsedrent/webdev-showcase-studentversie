@@ -26,6 +26,10 @@ namespace Showcase_Contactpagina.Controllers
         {
             return View();
         }
+        
+
+      
+
 
         // POST: ContactController
         [HttpPost]
@@ -53,6 +57,9 @@ namespace Showcase_Contactpagina.Controllers
             //      nadat je een account hebt aangemaakt op Mailtrap (of een alternatief).
 
             HttpResponseMessage response = new HttpResponseMessage(); // Vervang deze regel met het POST-request
+
+
+
 
             if(!response.IsSuccessStatusCode)
             {

@@ -27,7 +27,7 @@ class site {
     }
 
     const validateDescription = () => {
-        if (this.inputDescription.value.length > 600) {
+        if (inputDescription.value.length > 600) {
             inputDescription.setCustomValidity("Beschrijving mag niet langer dan 600 tekens zijn!");
         }
     }
