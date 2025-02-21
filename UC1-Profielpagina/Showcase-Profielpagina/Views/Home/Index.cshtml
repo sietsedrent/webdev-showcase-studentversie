@@ -3,49 +3,8 @@
 }
 
 <main class="page" style="background-color: #e1f5f4">
-
-
-
-    <div class="'gdpr-container">
-
-        <h1 id="content-gpdr-consent-status"></h1>
-
-        <div class="content-gdpr-not-chosen hide">
-            <p>Deze content wordt alleen getoond als gdrp consent niet is gekozen.</p>
-        </div>
-
-        <div class="content-gdpr-accept hide">
-            <p>Deze content wordt alleen getoond als gdrp is geaccepteerd.</p>
-        </div>
-
-        <div class="content-gdpr-reject hide">
-            <p>Deze content wordt alleen getoond als gdrp is verworpen.</p>
-        </div>
-
-        <section class="gdpr-consent hide">
-
-            <div class="gdpr-consent__description">
-                <p>
-                    Deze website gebruikt cookies.
-                    We gebruiken cookies om content te personaliseren, voor social media en het analyseren
-                    van verkeer op de website, advertenties.
-                </p>
-            </div>
-
-            <div class="gdpr-consent__choice">
-                <button class="gdpr-consent__button--accept">Ja, natuurlijk</button>
-                <button class="gdpr-consent__button--reject">Neu, misschien later</button>
-            </div>
-
-        </section>
-    </div>
-
-
-
-
     <!-- Linkerkant -->
     <section class="personalia">
-        <!-- Foto -->
         <img class="person-logo" src="images/pee.png" style="width: 100%; height: auto;" alt="Profielfoto van Sietse Drent">
         <h1 class="person-name">Sietse Drent</h1>
 
@@ -57,15 +16,10 @@
         <section class="profile-content__element--hidden-mobile">
             <div class="profile-content__element-header"></div>
             <p class="profile-content__description">
-                Ik ben een gedreven en resultaatgerichte professional met [aantal] jaar ervaring in [jouw vakgebied/sector].
-                Gedurende mijn carrière heb ik uitgebreide ervaring opgedaan in [specifieke vaardigheden of verantwoordelijkheden]
-                en heb ik bewezen succesvol te zijn in het behalen van [concrete resultaten]. Mijn passie voor [specifiek aspect van je vakgebied]
-                en mijn vermogen om snel nieuwe concepten te begrijpen, stellen me in staat om effectief samen te werken en bij te dragen aan het succes
-                van het team en de organisatie. Ik ben op zoek naar een uitdagende functie waar ik mijn vaardigheden verder kan ontwikkelen en mijn ervaring
-                kan inzetten om waarde te creëren.
+                Gedreven ICT-student | Probleemoplosser | Sportliefhebber <br /> <br />
+                Als ambitieuze ICT-student aan Windesheim heb ik een sterke passie voor technologie en het oplossen van complexe vraagstukken. Mijn analytische vaardigheden en gestructureerde aanpak stellen me in staat om technische problemen efficiënt te doorgronden en innovatieve oplossingen te bedenken. Naast mijn studie ben ik actief in sport, wat mijn doorzettingsvermogen en teamspirit versterkt. Ik ben leergierig, resultaatgericht en altijd op zoek naar manieren om mezelf verder te ontwikkelen binnen de dynamische wereld van ICT.
             </p>
         </section>
-
         <!-- Contact -->
         <section class="profile-content__category--hidden-mobile" align="left">
             <h2 class="profile-content__category-title">Contact</h2>
@@ -171,6 +125,35 @@
                 </div>
                 <p class="profile-content__institute">CSS, HTML (1 jaar ervaring)</p>
             </article>
+        </section>
+    </section>
+    <!-- Cookies-->
+    <section class="gdpr-container">
+        <h1 id="content-gpdr-consent-status"></h1>
+        <div class="content-gdpr-not-chosen hide">
+            <p>Om de inhoud te kunnen tonen zal er akkoord moeten worden gegaan met de voorwaarden. </p>
+        </div>
+        <div class="content-gdpr-accept hide">
+            <script>
+                document.getElementById("content-gpdr-consent-status").style.display = "none";
+            </script>
+        </div>
+        <div class="content-gdpr-reject hide" align="center">
+            <p>Door het afwijzen van de cookies kan de inhoud helaas niet getoond worden </p>
+            <img class="person-logo" src="images/Cookie.png" style="width: 100%; height: auto;" alt="Cookie">
+        </div>
+        <section class="gdpr-consent hide">
+            <div class="gdpr-consent__description">
+                <p>
+                    Deze website gebruikt cookies.
+                    We gebruiken cookies om content te personaliseren, voor social media en het analyseren
+                    van verkeer op de website, advertenties.
+                </p>
+            </div>
+            <div class="gdpr-consent__choice">
+                <button class="gdpr-consent__button--accept">Ja, natuurlijk</button>
+                <button class="gdpr-consent__button--reject">Nee, misschien later</button>
+            </div>
         </section>
     </section>
 </main>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        debugger;
+    console.log('1');
+    console.log('2');
+    console.log('3')
+
+    let resolver = function (resolve, reject) {
+        setTimeout(function () {
+            console.log('5');
+            reject('error');
+        }, 1000);
+    }
+    let print5Promise = new Promise(resolver);
+
+        //kan zoveel mogelijk .then maken als je wil
+        print5Promise.then(function () {
+            console.log('6');
+        }).catch(function (error)){
+            console.log(error);
+        });
+
+        Console.print5Promise;
+
+        //errror await is alleen mogelijk in asynchrone functie
+        async function print56() {
+            await print5Promise;
+            console.log('6');
+        }
+        await print56();
+
+
+        async function main() {
+            await print56();
+        }
+        main();
+    </script>
+</body>
+</html>
