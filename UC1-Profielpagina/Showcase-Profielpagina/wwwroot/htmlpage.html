@@ -19,7 +19,6 @@
     }
     let print5Promise = new Promise(resolver);
 
-        //kan zoveel mogelijk .then maken als je wil
         print5Promise.then(function () {
             console.log('6');
         }).catch(function (error)){
@@ -28,7 +27,6 @@
 
         Console.print5Promise;
 
-        //errror await is alleen mogelijk in asynchrone functie
         async function print56() {
             await print5Promise;
             console.log('6');
