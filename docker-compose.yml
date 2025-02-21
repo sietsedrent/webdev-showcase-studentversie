@@ -8,8 +8,6 @@ services:
       - "5000:5000"
     networks:
       - showcase_network
-    depends_on:
-      - showcasecontact
 
   showcasecontact:
     build:
