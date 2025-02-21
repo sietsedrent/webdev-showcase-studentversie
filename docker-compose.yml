@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  showcaseprofiel:
+    build:
+      context: ./UC1-Profielpagina  # Verwijst naar de map voor UC1
+      dockerfile: Dockerfile.profiel  # Gebruikt de Dockerfile voor UC1
+    ports:
+      - "5000:5000"  # Toewijzing van poort 5000 op je computer naar poort 5000 in de container
+    working_dir: /app  # Verwijs naar de map waarin je oplossing staat
+    command: ["dotnet", "UC1-Profielpagina.dll"]  # Start de juiste applicatie voor UC1
+    networks:
+      - showcase_network
+
+  showcasecontact:
+    build:
+      context: ./UC2-Contactpagina  # Verwijst naar de map voor UC2
+      dockerfile: Dockerfile.contact  # Gebruikt de Dockerfile voor UC2
+    ports:
+      - "5001:5000"  # Toewijzing van poort 5001 op je computer naar poort 5000 in de container
+    working_dir: /app  # Verwijs naar de map waarin je oplossing staat
+    command: ["dotnet", "UC2-Contactpagina.dll"]  # Start de juiste applicatie voor UC2
+    networks:
+      - showcase_network
+
+networks:
+  showcase_network:
+    driver: bridge
