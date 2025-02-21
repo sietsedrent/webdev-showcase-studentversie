@@ -1,18 +1,18 @@
-version: "3.8"  # De versie van Docker Compose
+version: "3.8"
 
 services:
   showcaseprofiel:
     build:
-      context: .  # De context is de root van je project
-      dockerfile: Dockerfile.profiel  # De specifieke Dockerfile voor de profielpagina
+      context: .  # Verwijst naar de root van je project
+      dockerfile: Dockerfile.profiel  # Specifieke Dockerfile voor de profielpagina
     ports:
-      - "8080:80"  # Dit kan worden aangepast naar de poort die je gebruikt
+      - "8080:80"
     container_name: showcaseprofiel
 
   showcasecontact:
     build:
-      context: .  # De context is de root van je project
-      dockerfile: Dockerfile.contact  # De specifieke Dockerfile voor de contactpagina
+      context: .  # Verwijst naar de root van je project
+      dockerfile: Dockerfile.contact  # Specifieke Dockerfile voor de contactpagina
     ports:
-      - "8081:80"  # Dit kan worden aangepast naar de poort die je gebruikt
+      - "8081:80"
     container_name: showcasecontact
