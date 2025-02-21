@@ -1,0 +1,32 @@
+# Stap 1: Kies de basis image met .NET SDK versie 8.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# Stap 2: Zet de werkmap in de container
+WORKDIR /app
+
+# Stap 3: Kopieer het .csproj bestand van de Profielpagina naar de container
+COPY UC1-Profielpagina/Showcase-Profielpagina.csproj ./ 
+
+# Stap 4: Restore de dependencies van het project
+RUN dotnet restore
+
+# Stap 5: Kopieer de rest van de bestanden naar de container
+COPY . ./
+
+# Stap 6: Bouw de applicatie
+RUN dotnet publish -c Release -o out
+
+# Stap 7: Gebruik een lichte image voor het uitvoeren van de applicatie
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+
+# Stap 8: Zet de werkmap in de container voor de runtime
+WORKDIR /app
+
+# Stap 9: Kopieer de gebouwde applicatie vanuit de vorige fase
+COPY --from=build /app/out .
+
+# Stap 10: Expose poort 5000 voor de applicatie
+EXPOSE 5000
+
+# Stap 11: Start de applicatie
+ENTRYPOINT ["dotnet", "Showcase-Profielpagina.dll"]
