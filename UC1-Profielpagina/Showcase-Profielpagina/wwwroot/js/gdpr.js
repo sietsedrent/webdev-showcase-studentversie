@@ -24,9 +24,15 @@ class GDPR {
 
         buttonAccept.addEventListener('click', () => {
             this.cookieStatus('accept');
+
+            let expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 7);
+            document.cookie = `gdpr-consent-choice=accept; expires=${expirationDate.toUTCString()}; path=/`;
+
             this.showStatus();
             this.showContent();
             this.hideGDPR();
+
             let DateAndTime = { Datum: date, Tijd: time };
             localStorage.setItem('gegevens', JSON.stringify(DateAndTime));
 
@@ -34,6 +40,7 @@ class GDPR {
             document.querySelector('.profile').style.display = 'flex';
             document.querySelector('.gdpr-container').style.display = 'none';
         });
+
 
         let buttonReject = document.querySelector('.gdpr-consent__button--reject');
         buttonReject.addEventListener('click', () => {
@@ -84,6 +91,7 @@ class GDPR {
     showGDPR(){
         document.querySelector(`.gdpr-consent`).classList.add('show');
     }
+
 }
 const gdpr = new GDPR();
 
