@@ -57,6 +57,7 @@
                 .then(data => {
                     // Verwerk succesvolle formulierinzending
                     console.log('Formulier succesvol ingediend:', data);
+                    form.submit();
                 })
                 .catch(error => {
                     console.error('Er was een probleem met de formulierinzending:', error);
