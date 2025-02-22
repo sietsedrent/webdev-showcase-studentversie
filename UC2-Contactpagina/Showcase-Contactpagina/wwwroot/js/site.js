@@ -73,7 +73,4 @@ class site {
                 // Verwerk fouten hier
             });
     });
-
-
-
 }

@@ -14,22 +14,42 @@ namespace ShowcaseAPI.Controllers
     [ApiController]
     public class MailController : ControllerBase
     {
-        // POST api/<MailController>
         [HttpPost]
         public ActionResult Post([Bind("FirstName, LastName, Email, Phone, Subject, Description")] Contactform form)
         {
-            //Op brightspace staan instructies over hoe je de mailfunctionaliteit werkend kunt maken:
-            //Project Web Development > De showcase > Week 2: contactpagina (UC2) > Hoe verstuur je een mail vanuit je webapplicatie met Mailtrap?
-
-            var client = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
+            try
             {
-                Credentials = new NetworkCredential("ab6bf5befc4a02", "3ad7fd5780c303"),
-                EnableSsl = true
-            };
-            client.Send(form.Email, "to@example.com", form.Subject, "testbody");
-            System.Console.WriteLine("Sent");
+                var client = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
+                {
+                    Credentials = new NetworkCredential("ab6bf5befc4a02", "3ad7fd5780c303"),
+                    EnableSsl = true
+                };
 
-            return Ok();
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(form.Email),
+                    Subject = form.Subject,
+                    Body = $"Naam: {form.FirstName} {form.LastName}\n" +
+                           $"E-mail: {form.Email}\n" +
+                           $"Telefoon: {form.Phone}\n\n" +
+                           $"Onderwerp: {form.Subject} \n" +
+                           $"Omschrijving: {form.Description}", 
+                    IsBodyHtml = false 
+                };
+
+                mailMessage.To.Add("to@example.com");
+
+                client.Send(mailMessage);
+
+                System.Console.WriteLine("E-mail succesvol verzonden!");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine($"Er is een fout opgetreden bij het verzenden van de e-mail: {ex.Message}");
+                return StatusCode(500, "Er ging iets mis bij het verzenden van de e-mail.");
+            }
         }
     }
 }
+
