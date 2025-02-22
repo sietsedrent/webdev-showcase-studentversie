@@ -1,5 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     // Initialiseer een nieuwe instance van de Site class
+    // Initialiseer een nieuwe instance van de Site class
     const site = new Site();
 
     // Selecteer het emailveld
@@ -22,6 +23,14 @@
 
             // Valideer alle velden voor de zekerheid
             site.validateForm(inputEmail);
+
+            // Controleer of reCAPTCHA is voltooid
+            site.validateRecaptcha(); // Roep validateRecaptcha aan
+
+            if (!site.allowSubmit) { // Gebruik hier site.allowSubmit
+                alert("Gelieve de reCAPTCHA te voltooien.");
+                return; // Stop de form submit als reCAPTCHA niet voltooid is
+            }
 
             // Verkrijg CSRF-token van het formulier
             const csrfToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
@@ -55,6 +64,7 @@
                 });
         });
     }
+
 });
 
 // De Site class die verantwoordelijk is voor formuliervalidatie
@@ -72,6 +82,20 @@ class Site {
             inputEmail.setCustomValidity("Email moet niet langer dan 80 tekens zijn!");
         } else {
             inputEmail.setCustomValidity("");
+        }
+    }
+
+    validateRecaptcha() {
+        const recaptchaResponse = grecaptcha.getResponse(); // Verkrijg de reCAPTCHA reactie
+        console.log('reCAPTCHA Response:', recaptchaResponse); // Debugging
+
+        if (recaptchaResponse.length === 0) {
+            console.log('reCAPTCHA niet ingevuld!');
+            this.allowSubmit = false; // Validatie mislukt, set allowSubmit to false
+            return false;
+        } else {
+            this.allowSubmit = true; // Als reCAPTCHA is ingevuld, allowSubmit wordt true
+            return true;
         }
     }
 
