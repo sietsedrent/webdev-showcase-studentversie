@@ -1,11 +1,70 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener('DOMContentLoaded', () => {
+    // Initialiseer een nieuwe instance van de Site class
+    const site = new Site();
 
-// Write your JavaScript code.
-class site {
+    // Selecteer het emailveld
     const inputEmail = document.getElementById('email');
 
-    const validateEmail = () => {
+    // Zorg ervoor dat inputEmail niet null is voordat je er iets mee doet
+    if (inputEmail) {
+        // Event listeners voor het emailveld
+        inputEmail.addEventListener("blur", () => site.validateEmail(inputEmail));
+        inputEmail.addEventListener("input", () => site.validateEmail(inputEmail));
+    }
+
+    // Selecteer het formelement
+    const form = document.querySelector('.form-contactpagina');
+
+    if (form) {
+        // Event listener voor formulierinzending
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Voorkom standaard formulierinzending
+
+            // Valideer alle velden voor de zekerheid
+            site.validateForm(inputEmail);
+
+            // Verkrijg CSRF-token van het formulier
+            const csrfToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            // Serialiseer formuliergegevens
+            const formData = new URLSearchParams();
+            formData.append('email', form.email.value);
+            formData.append('__RequestVerificationToken', csrfToken); // Voeg CSRF-token toe
+
+            // Voer een POST-verzoek uit
+            fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Stel de inhoudstype in
+                },
+                body: formData // Stuur de geserialiseerde formuliergegevens als de body
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Netwerkrespons was niet ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Verwerk succesvolle formulierinzending
+                    console.log('Formulier succesvol ingediend:', data);
+                })
+                .catch(error => {
+                    console.error('Er was een probleem met de formulierinzending:', error);
+                    alert(error.message);
+                });
+        });
+    }
+});
+
+// De Site class die verantwoordelijk is voor formuliervalidatie
+class Site {
+    constructor() {
+        this.allowSubmit = false; // Declaratie van de allowSubmit variabele
+    }
+
+    // Functie voor email validatie
+    validateEmail(inputEmail) {
         if (inputEmail.validity.typeMismatch) {
             inputEmail.setCustomValidity("Voer een geldig e-mailadres in!");
             inputEmail.reportValidity();
@@ -16,61 +75,8 @@ class site {
         }
     }
 
-
-    const validateForm = () => {
-        validateEmail();
+    // Functie voor formuliervalidatie
+    validateForm(inputEmail) {
+        this.validateEmail(inputEmail);
     }
-
-   // Event listener voor email
-   // Aanbevolen events voor formulieren: https://github.com/Windesheim-HBO-ICT/client_studenten/blob/main/lessen/week-2/les-1/form-constraint-validation-api/studentversie/events-voor-invoer-validatie.md
-   inputEmail.addEventListener("blur", validateEmail);
-   inputEmail.addEventListener("input", validateEmail);
-
-    // Selecteer het formelement
-    const form = document.querySelector('.form-contactpagina');
-
-   // Event listener voor formulierinzending
-   form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Voorkom standaard formulierinzending
-
-        // Valideer alle velden voor de zekerheid
-        validateForm();
-
-        // Verkrijg CSRF-token van het formulier
-        const csrfToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
-
-        // Serialiseer formuliergegevens
-        const formData = new URLSearchParams();
-
-        formData.append('email', form.email.value);
-
-        formData.append('__RequestVerificationToken', csrfToken); // Voeg CSRF-token toe
-
-        // Voer een POST-verzoek uit
-        fetch('/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded' // Stel de inhoudstype in
-            },
-            body: formData // Stuur de geserialiseerde formuliergegevens als de body
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Netwerkrespons was niet ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Verwerk succesvolle formulierinzending
-                console.log('Formulier succesvol ingediend:', data);
-                // Optioneel: je kunt hier een redirect uitvoeren of een succesbericht tonen
-            })
-            .catch(error => {
-                console.error('Er was een probleem met de formulierinzending:', error);
-
-                alert(error.message)
-
-                // Verwerk fouten hier
-            });
-    });
 }
