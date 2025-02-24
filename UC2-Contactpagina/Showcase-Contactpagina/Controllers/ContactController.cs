@@ -70,10 +70,10 @@ namespace Showcase_Contactpagina.Controllers
 
 
             ViewBag.Message = "Het contactformulier is verstuurd";
-            
+            ModelState.Clear();
+
             return View();
 
-            
 
         }
     }
